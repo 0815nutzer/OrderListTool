@@ -1,0 +1,177 @@
+####################################################################################################
+# list of ordering numbers for mechanical parts
+#
+# how to use/read/fill this file
+#
+# PROPERTIES are used to set properties for all the following parts listed below
+# PROPERTIES consist of two elements: a keyword and a value, separated by :
+# ENTRIES are used to define a part with the properties set by the previous PROPERTIES
+# ENTRIES consists of three elements: the part value, the ordering number and an optional comment, separated by ;
+#
+# value-syntax: the value defines the IC-type (i.e. L78L05). It is not reqired, that the value contains package information or else but it could.
+#               This information is provided by the package property.
+#
+# defined PROPERTY keywords
+#	PACKAGE			defines the package property of the following parts
+#	DISTRIBUTOR		defines the distributor, to who the ordering number belongs
+# Each PROPERTY has to be defined within a define-section in this document.
+# Position doesn't matter but it is supposed to place this section at the beginning of the file.
+# Within the section, the PROPERTY-keyword is defined and there has to be added an additional information, separated by :
+#	TYPE			STRING			PROPERTY has to be treated as string and whole string must match (i.e. dielectric)
+#                   SUBSTRING       PROPERTY has to be treated as string and needs only to be a part of the BOM part property (i.e. package)
+#					NUMBER_MAX		PROPERTY has to be treated as number and values equal or lower are better (i.e. tolerance)
+#					NUMBER_EQUAL	PROPERTY has to be treated as number and value has to be exact
+#					NUMBER_MIN		PROPERTY has to be treated as number and values equal or higher are better (i.e. capacitor voltage rating)
+#	SYMBOL							a string, that is later searched for in the value of the BOM part, to extract the information (i.e. "%" for tolerance)
+#   DEFAULT_VALUE                   a number that will be used, if the value of the part in the BOM file does not contain any further PROPERTY information
+#
+####################################################################################################
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# define PROPERTIES
+DEFINE_PROPERTIES
+VALUE:STRING
+PACKAGE:SUBSTRING
+ORDNUM:STRING
+DISTRIBUTOR:STRING
+COMMENT:STRING
+# entry properties
+VALUE;ORDNUM;COMMENT
+ENDDEFINE
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Farnell
+DISTRIBUTOR:Farnell
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# button switch
+PACKAGE:B3FS
+B3FS-1000P;1960992;OMRON
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Digikey
+DISTRIBUTOR:Digikey
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# RJ45 connector with LED
+PACKAGE:RJ45
+J1B1211CCD;1278-1052-ND;WIZnet
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Phoenix connectors
+# MKDS 5mm
+PACKAGE:Phoenix_MKDS-1,5-2_1x02_P5.00mm_Horizontal
+MKDS-1,5-2;277-1258-ND; Phoenix Contact
+#PACKAGE:Phoenix_MKDS-1,5-3_1x03_P5.00mm_Horizontal
+#MKDS-1,5-3;277-1258-ND; Phoenix Contact
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Reichelt
+DISTRIBUTOR:Reichelt
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Pin Header
+PACKAGE:PinHeader_1x02_P2.54mm
+PinHeader_01x02;MPE 087-1-002;Stiftleiste 1x02
+PACKAGE:PinHeader_1x03_P2.54mm
+PinHeader_01x03;MPE 087-1-003;Stiftleiste 1x03
+PACKAGE:PinHeader_1x04_P2.54mm
+PinHeader_01x04;MPE 087-1-004;Stiftleiste 1x04
+PACKAGE:PinHeader_1x05_P2.54mm
+PinHeader_01x05;MPE 087-1-005;Stiftleiste 1x05
+PACKAGE:PinHeader_1x06_P2.54mm
+PinHeader_01x06;MPE 087-1-006;Stiftleiste 1x06
+PACKAGE:PinHeader_1x07_P2.54mm
+PinHeader_01x07;MPE 087-1-007;Stiftleiste 1x07
+PACKAGE:PinHeader_1x08_P2.54mm
+PinHeader_01x08;MPE 087-1-008;Stiftleiste 1x08
+PACKAGE:PinHeader_1x10_P2.54mm
+PinHeader_01x10;MPE 087-1-010;Stiftleiste 1x10
+PACKAGE:PinHeader_1x20_P2.54mm
+PinHeader_01x20;MPE 087-1-020;Stiftleiste 1x20
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Jumper
+PACKAGE:PinHeader_1x02_P2.54mm
+Jumper_2_Open;MPE 087-1-002;nur Stiftleiste ohne Jumper
+Jumper_2_Open;MPE 087-1-002 & JUMPER 2,54 SW;Stiftleiste + Jumper
+Jumper_2_Open;MPE 087-1-002 & JUMPER 2,54GL SW;Stiftleiste + Jumper mit Lasche
+Jumper_3_Open;MPE 087-1-003;nur Stiftleiste ohne Jumper
+Jumper_3_Open;MPE 087-1-003 & JUMPER 2,54 SW;Stiftleiste + Jumper
+Jumper_3_Open;MPE 087-1-003 & JUMPER 2,54GL SW;Stiftleiste + Jumper mit Lasche
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# PSK-connector
+PACKAGE:Molex_KK-254
+# gerader PCB-Stecker
+PSS_254_2G;PSS 254/2G;PSK Stecker gerade
+PSS_254_2G;PSS 254/2G & PSK 254/2W;PSK Stecker gerade + Buchse
+PSS_254_2G;PSS 254/2G & PSK 254/2W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_3G;PSS 254/3G;PSK Stecker gerade
+PSS_254_3G;PSS 254/3G & PSK 254/3W;PSK Stecker gerade + Buchse
+PSS_254_3G;PSS 254/3G & PSK 254/3W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_4G;PSS 254/4G;PSK Stecker gerade
+PSS_254_4G;PSS 254/4G & PSK 254/4W;PSK Stecker gerade + Buchse
+PSS_254_4G;PSS 254/4G & PSK 254/4W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_5G;PSS 254/5G;PSK Stecker gerade
+PSS_254_5G;PSS 254/5G & PSK 254/5W;PSK Stecker gerade + Buchse
+PSS_254_5G;PSS 254/5G & PSK 254/5W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_6G;PSS 254/6G;PSK Stecker gerade
+PSS_254_6G;PSS 254/6G & PSK 254/6W;PSK Stecker gerade + Buchse
+PSS_254_6G;PSS 254/6G & PSK 254/6W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_8G;PSS 254/8G;PSK Stecker gerade
+PSS_254_8G;PSS 254/8G & PSK 254/8W;PSK Stecker gerade + Buchse
+PSS_254_8G;PSS 254/8G & PSK 254/8W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_10G;PSS 254/10G;PSK Stecker gerade
+PSS_254_10G;PSS 254/10G & PSK 254/10W;PSK Stecker gerade + Buchse
+PSS_254_10G;PSS 254/10G & PSK 254/10W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+# gewinkelter PCB-Stecker
+PSS_254_2W;PSS 254/2W;PSK Stecker gerade
+PSS_254_2W;PSS 254/2W & PSK 254/2W;PSK Stecker gerade + Buchse
+PSS_254_2W;PSS 254/2W & PSK 254/2W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_3W;PSS 254/3W;PSK Stecker gerade
+PSS_254_3W;PSS 254/3W & PSK 254/3W;PSK Stecker gerade + Buchse
+PSS_254_3W;PSS 254/3W & PSK 254/3W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_4W;PSS 254/4W;PSK Stecker gerade
+PSS_254_4W;PSS 254/4W & PSK 254/4W;PSK Stecker gerade + Buchse
+PSS_254_4W;PSS 254/4W & PSK 254/4W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_5W;PSS 254/5W;PSK Stecker gerade
+PSS_254_5W;PSS 254/5W & PSK 254/5W;PSK Stecker gerade + Buchse
+PSS_254_5W;PSS 254/5W & PSK 254/5W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_6W;PSS 254/6W;PSK Stecker gerade
+PSS_254_6W;PSS 254/6W & PSK 254/6W;PSK Stecker gerade + Buchse
+PSS_254_6W;PSS 254/6W & PSK 254/6W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_8W;PSS 254/8W;PSK Stecker gerade
+PSS_254_8W;PSS 254/8W & PSK 254/8W;PSK Stecker gerade + Buchse
+PSS_254_8W;PSS 254/8W & PSK 254/8W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_10W;PSS 254/10W;PSK Stecker gerade
+PSS_254_10W;PSS 254/10W & PSK 254/10W;PSK Stecker gerade + Buchse
+PSS_254_10W;PSS 254/10W & PSK 254/10W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Fuse Holder
+PACKAGE:Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open
+0.25A;PL OGN-22,5;Sicherungshalter
+0.25A;PL OGN-22,5 & FLINK 0,25A;Sicherungshalter + Sicherung flink
+0.25A;PL OGN-22,5 & MTR. 0,25A;Sicherungshalter + Sicherung mittelträge
+0.25A;PL OGN-22,5 & TR 0,25A;Sicherungshalter + Sicherung träge
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

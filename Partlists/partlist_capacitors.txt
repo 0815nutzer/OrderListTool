@@ -1,0 +1,173 @@
+####################################################################################################
+# list of ordering numbers for capacitors
+#
+# how to use/read/fill this file
+#
+# PROPERTIES are used to set properties for all the following parts listed below
+# PROPERTIES consist of two elements: a keyword and a value, separated by :
+# ENTRIES are used to define a part with the properties set by the previous PROPERTIES
+# ENTRIES consists of three elements: the part value, the ordering number and an optional comment, separated by ;
+#
+# value-syntax: the value can be written in two ways
+#	suffix as delimiter:	3.3uF -> 3u3
+#	suffix at the end:		3.3uF -> 3.3u
+# Attension: µ or u are used similar
+#
+# defined PROPERTY keywords
+#   VALUE           defines the value of the part
+#   ORDNUM          defines the part ordering number
+#   COMMENT         defines a part comment
+#	PACKAGE			defines the package PROPERTY of the following parts
+#	VOLTAGE			defines the voltage rating of the following parts [in V]
+#	TOLERANCE		defines the restors tolerance [in %]
+#	DIELECTRIC		defines the parts dielectric
+#	DISTRIBUTOR		defines the distributor, to who the ordering number belongs
+# Each PROPERTY has to be defined within a define-section in this document.
+# Position doesn't matter but it is supposed to place this section at the beginning of the file.
+# Within the section, the PROPERTY-keyword is defined and there has to be added some additional information, separated by :
+#	TYPE			STRING			PROPERTY has to be treated as string and whole string must match (i.e. dielectric)
+#                   SUBSTRING       PROPERTY has to be treated as string and needs only to be a part of the BOM part property (i.e. package)
+#					NUMBER_MAX		PROPERTY has to be treated as number and values equal or lower are better (i.e. tolerance)
+#					NUMBER_EQUAL	PROPERTY has to be treated as number and value has to be exact
+#					NUMBER_MIN		PROPERTY has to be treated as number and values equal or higher are better (i.e. capacitor voltage rating)
+#                   UNIT            PROPERTY has to be treated as unit (should only be used for capacitors, inductors, and resistors, i.e. 1k8, 100n)
+#	SYMBOL							a string, that is later searched for in the value of the BOM part, to extract the information (i.e. "%" for tolerance)
+#   DEFAULT_VALUE                   a number that will be used, if the value of the part in the BOM file does not contain any further PROPERTY information
+# Last line of the define-section must contain a description of the properties of each entry, separated by ;
+#
+# Example to define the ordering number of a 100nF resistor with the ordering number 0123456789 provided by Farnell:
+# VOLTAGE:16
+# TOLERANCE:10%
+# PACKAGE:0603
+# DISTRIBUTOR:Farnell
+# 100n;0123456789;Comment
+####################################################################################################
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# define PROPERTIES
+DEFINE_PROPERTIES
+VALUE:UNIT
+PACKAGE:SUBSTRING
+ORDNUM:STRING
+DISTRIBUTOR:STRING
+VOLTAGE:NUMBER_MIN:V:16
+DIELECTRIC:STRING
+TOLERANCE:NUMBER_MAX:%:20
+COMMENT:STRING
+# entry properties
+VALUE;ORDNUM;COMMENT
+ENDDEFINE
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Farnell
+DISTRIBUTOR:Farnell
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DIELECTRIC:X7R
+TOLERANCE:10
+PACKAGE:0603
+
+VOLTAGE:16
+1u;1650837;KEMET 10+
+
+VOLTAGE:25
+330n;2627440;MULTICOMP PRO 10+
+
+VOLTAGE:50
+10n;2581043;KEMET 10+
+56n;1865538;KEMET 10+
+100n;2581046;KEMET 10+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DIELECTRIC:X7R
+TOLERANCE:10
+PACKAGE:1206
+
+VOLTAGE:50
+1u;2991419;KEMET 5+
+2u2;1288208;KEMET 5+
+4u7;2491180;KEMET 5+
+
+VOLTAGE:100
+1u;2579023;KEMET 5+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DIELECTRIC:X7R
+TOLERANCE:10
+PACKAGE:1210
+
+VOLTAGE:10
+47u;1797018;MURATA
+
+VOLTAGE:25
+22u;2473550;KEMET
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DIELECTRIC:C0G
+TOLERANCE:5
+PACKAGE:0603
+
+VOLTAGE:50
+5p6;1865469;KEMET 10+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DIELECTRIC:NP0
+TOLERANCE:5
+PACKAGE:0603
+
+VOLTAGE:50
+5p6;1865469;KEMET 10+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DIELECTRIC:Elec
+TOLERANCE:20
+PACKAGE:Elec_4x5.4
+
+VOLTAGE:50
+1u;9697063;PANASONIC 5+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

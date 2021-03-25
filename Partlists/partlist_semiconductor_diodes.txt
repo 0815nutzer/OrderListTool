@@ -1,0 +1,95 @@
+####################################################################################################
+# list of ordering numbers for diodes
+#
+# how to use/read/fill this file
+#
+# PROPERTIES are used to set properties for all the following parts listed below
+# PROPERTIES consist of two elements: a keyword and a value, separated by :
+# ENTRIES are used to define a part with the properties set by the previous PROPERTIES
+# ENTRIES consists of three elements: the part value, the ordering number and an optional comment, separated by ;
+#
+# value-syntax: the value defines the IC-type (i.e. L78L05). It is not reqired, that the value contains package information or else but it could.
+#               This information is provided by the package property.
+#
+# defined PROPERTY keywords
+#	PACKAGE			defines the package property of the following parts
+#	DISTRIBUTOR		defines the distributor, to who the ordering number belongs
+# Each PROPERTY has to be defined within a define-section in this document.
+# Position doesn't matter but it is supposed to place this section at the beginning of the file.
+# Within the section, the PROPERTY-keyword is defined and there has to be added an additional information, separated by :
+#	TYPE			STRING			PROPERTY has to be treated as string and whole string must match (i.e. dielectric)
+#                   SUBSTRING       PROPERTY has to be treated as string and needs only to be a part of the BOM part property (i.e. package)
+#					NUMBER_MAX		PROPERTY has to be treated as number and values equal or lower are better (i.e. tolerance)
+#					NUMBER_EQUAL	PROPERTY has to be treated as number and value has to be exact
+#					NUMBER_MIN		PROPERTY has to be treated as number and values equal or higher are better (i.e. capacitor voltage rating)
+#	SYMBOL							a string, that is later searched for in the value of the BOM part, to extract the information (i.e. "%" for tolerance)
+#   DEFAULT_VALUE                   a number that will be used, if the value of the part in the BOM file does not contain any further PROPERTY information
+#
+####################################################################################################
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# define PROPERTIES
+DEFINE_PROPERTIES
+VALUE:STRING
+PACKAGE:SUBSTRING
+ORDNUM:STRING
+DISTRIBUTOR:STRING
+COMMENT:STRING
+# entry properties
+VALUE;ORDNUM;COMMENT
+ENDDEFINE
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Farnell
+DISTRIBUTOR:Farnell
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Shottky
+
+# SOD-323F
+PACKAGE:D_SOD-323F
+PMEG4005AEA;8738025;NEXPERIA 5+
+
+# SMA
+PACKAGE:D_SMA
+B340AE;3127195;DIODES INC. 5+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Zener
+
+# SOD-123
+PACKAGE:D_SOD-123
+MMSZ5242B;2748170;MULTICOMP PRO 5+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

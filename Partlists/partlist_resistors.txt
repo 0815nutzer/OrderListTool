@@ -1,0 +1,150 @@
+####################################################################################################
+# list of ordering numbers for resistors
+#
+# how to use/read/fill this file
+#
+# PROPERTIES are used to set properties for all the following parts listed below
+# PROPERTIES consist of two elements: a keyword and a value, separated by :
+# ENTRIES are used to define a part with the properties set by the previous PROPERTIES
+# ENTRIES consists of three elements: the part value, the ordering number and an optional comment, separated by ;
+#
+# value-syntax: the value can be written in two ways
+#	suffix as delimiter:	1.8kOhms -> 1k8
+#	suffix at the end:		1.8kOhms -> 1.8k
+# Attension: units are case-sensitive! m->milli, M->mega
+#
+# defined PROPERTY keywords
+#	PACKAGE			defines the package property of the following parts
+#	POWER			defines the power rating of the following parts [in W]
+#	TOLERANCE		defines the restors tolerance [in %]
+#	DISTRIBUTOR		defines the distributor, to who the ordering number belongs
+# Each PROPERTY has to be defined within a define-section in this document.
+# Position doesn't matter but it is supposed to place this section at the beginning of the file.
+# Within the section, the PROPERTY-keyword is defined and there has to be added an additional information, separated by :
+#	TYPE			STRING			PROPERTY has to be treated as string and whole string must match (i.e. dielectric)
+#                   SUBSTRING       PROPERTY has to be treated as string and needs only to be a part of the BOM part property (i.e. package)
+#					NUMBER_MAX		PROPERTY has to be treated as number and values equal or lower are better (i.e. tolerance)
+#					NUMBER_EQUAL	PROPERTY has to be treated as number and value has to be exact
+#					NUMBER_MIN		PROPERTY has to be treated as number and values equal or higher are better (i.e. capacitor voltage rating)
+#	SYMBOL							a string, that is later searched for in the value of the BOM part, to extract the information (i.e. "%" for tolerance)
+#   DEFAULT_VALUE                   a number that will be used, if the value of the part in the BOM file does not contain any further PROPERTY information
+#
+# Example to define the ordering number of a 1kOhm resistor with the ordering number 0123456789 provided by Farnell:
+# POWER:0.125
+# TOLERANCE:1%
+# PACKAGE:0603
+# DISTRIBUTOR:Farnell
+# 1k;0123456789
+####################################################################################################
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# define PROPERTIES
+DEFINE_PROPERTIES
+VALUE:UNIT
+PACKAGE:SUBSTRING
+ORDNUM:STRING
+DISTRIBUTOR:STRING
+POWER:NUMBER_MIN:W:0.125
+TOLERANCE:NUMBER_MAX:%:10
+COMMENT:STRING
+# entry properties
+VALUE;ORDNUM;COMMENT
+ENDDEFINE
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Farnell
+DISTRIBUTOR:Farnell
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TOLERANCE:0.1
+POWER:0.15
+
+PACKAGE:0603
+60k4;3229648;TE
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TOLERANCE:1
+POWER:0.1
+
+PACKAGE:0603
+24k9;2059443;PANASONIC 10+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TOLERANCE:1
+POWER:0.125
+
+PACKAGE:0603
+0R;1652824;VISHAY 10+
+120R;2670000;WALSIN 10+
+1k;2502799;WALSIN 10+
+1k8;2670013;WALSIN 10+
+4k7;2694078;MULTICOMP PRO 10+
+8k2;2694092;MULTICOMP PRO 10+
+10k;2502802;WALSIN 10+
+13k;2614417;VISHAY 10+
+16k;1894133;PANASONIC 10+
+30k;3266132;MULTICOMP PRO 10+
+100k;2502804;WALSIN 10+
+150k;2694047;MULTICOMP PRO 10+
+160k;3266152;MULTICOMP PRO 10+
+180k;2694053;MULTICOMP PRO 10+
+300k;3546608;VISHAY 10+
+330k;1750706;PANASONIC 10+
+620k;3266167;MULTICOMP PRO 10+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TOLERANCE:5
+POWER:0.500
+
+PACKAGE:L9.9mm_D3.6mm_P15.24mm
+100k;1779373;YAGEO
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TOLERANCE:10
+POWER:0.250
+
+PACKAGE:3214X
+100k;1739452;BOURNS
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Digikey
+DISTRIBUTOR:Digikey
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TOLERANCE:10
+POWER:0.250
+
+PACKAGE:3214X
+10k;3214X-1-103ECT-ND;BOURNS
+20k;3214X-1-203ECT-ND;BOURNS
+100k;3214X-1-104ECT-ND;BOURNS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

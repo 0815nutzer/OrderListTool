@@ -1,0 +1,78 @@
+####################################################################################################
+# list of ordering numbers for inductors
+#
+# how to use/read/fill this file
+#
+# PROPERTIES are used to set properties for all the following parts listed below
+# PROPERTIES consist of two elements: a keyword and a value, separated by :
+# ENTRIES are used to define a part with the properties set by the previous PROPERTIES
+# ENTRIES consists of three elements: the part value, the ordering number and an optional comment, separated by ;
+#
+# value-syntax: the value can be written in two ways
+#	suffix as delimiter:	2.7uH -> 2u7
+#	suffix at the end:	2.7uH -> 2.7u
+#
+# defined PROPERTY keywords
+#	PACKAGE			defines the package attribute of the following parts
+#	CURRENT			defines the current rating of the following parts [in A]
+#	TOLERANCE		defines the restors tolerance [in %]
+#	DISTRIBUTOR		defines the distributor, to who the ordering number belongs
+# Each PROPERTY has to be defined within a define-section in this document.
+# Position doesn't matter but it is supposed to place this section at the beginning of the file.
+# Within the section, the PROPERTY-keyword is defined and there has to be added an additional information, separated by :
+#	TYPE			STRING			PROPERTY has to be treated as string and whole string must match (i.e. dielectric)
+#                   SUBSTRING       PROPERTY has to be treated as string and needs only to be a part of the BOM part property (i.e. package)
+#					NUMBER_MAX		PROPERTY has to be treated as number and values equal or lower are better (i.e. tolerance)
+#					NUMBER_EQUAL	PROPERTY has to be treated as number and value has to be exact
+#					NUMBER_MIN		PROPERTY has to be treated as number and values equal or higher are better (i.e. capacitor voltage rating)
+#	SYMBOL							a string, that is later searched for in the value of the BOM part, to extract the information (i.e. "%" for tolerance)
+#   DEFAULT_VALUE                   a number that will be used, if the value of the part in the BOM file does not contain any further PROPERTY information
+#
+# Example to define the ordering number of a 2.7uH inductor with the ordering number 0123456789 provided by Farnell:
+# CURRENT:2
+# TOLERANCE:5%
+# PACKAGE:1210
+# DISTRIBUTOR:Farnell
+# 2u7;0123456789
+####################################################################################################
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# define PROPERTIES
+DEFINE_PROPERTIES
+VALUE:UNIT
+PACKAGE:SUBSTRING
+ORDNUM:STRING
+DISTRIBUTOR:STRING
+CURRENT:NUMBER_MIN:A:0
+TOLERANCE:NUMBER_MAX:%:20
+COMMENT:STRING
+# entry properties
+VALUE;ORDNUM;COMMENT
+ENDDEFINE
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Farnell
+DISTRIBUTOR:Farnell
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TOLERANCE:20
+PACKAGE:L_10.4x10.4_H4.8
+CURRENT:3.35
+18u;2288208;Coilcraft
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Digikey
+DISTRIBUTOR:Digikey
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TOLERANCE:20
+PACKAGE:IHLP-2525
+CURRENT:5.5
+4u7;541-1010-1-ND;VISHAY
+
+PACKAGE:WE-TPC-3816
+CURRENT:0.72
+15u;732-2618-1-ND;Würth
+
+PACKAGE:WE-DD-Typ-L
+CURRENT:1
+10u;732-2317-1-ND;Würth
