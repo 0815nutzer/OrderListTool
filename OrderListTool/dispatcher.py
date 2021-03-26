@@ -382,12 +382,12 @@ class Dispatcher():
 
 class System():
     def __init__(self):
-        if not isinstance(Settings.DEFAULT_DIRECTORY,str):
+        if not isinstance(Setup.DEFAULT_DIRECTORY,str):
             raise Exception("DEFAULT_DIRECTORY defined in settings.py is not a string")
-        if not isinstance(Settings.DEFAULT_FILE,str):
+        if not isinstance(Setup.DEFAULT_FILE,str):
             raise Exception("DEFAULT_FILE defined in settings.py is not a string")
-        self.DEFAULT_DIRECTORY = Settings.DEFAULT_DIRECTORY
-        self.DEFAULT_FILE = Settings.DEFAULT_FILE
+        self.DEFAULT_DIRECTORY = Setup.DEFAULT_DIRECTORY
+        self.DEFAULT_FILE = Setup.DEFAULT_FILE
         try:
             self.systems = Settings.SYSTEMS
             self.selected_system = []

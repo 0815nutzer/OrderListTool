@@ -1,3 +1,9 @@
+# default configuration
+###################################################################################################
+DEFAULT_DIRECTORY = ""  # preselect folder containing database files
+DEFAULT_FILE = ""       # preselect a BOM-file
+LANGUAGE = "de"         # GUI language (en, de)
+
 # define part template instances (PTI)
 ###################################################################################################
 # list all properties, that each instance must have

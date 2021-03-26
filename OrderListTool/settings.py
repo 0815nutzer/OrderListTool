@@ -1,8 +1,5 @@
 # default settings
 DEFAULT_SYSTEM = "KiCAD"
-DEFAULT_DIRECTORY = ""
-DEFAULT_FILE = ""
-LANGUAGE = "de"     # en, de
 
 # reference symbols to ignore, because there belongs no part to them (i.e. holes, test pins)
 # independent from CAD system
