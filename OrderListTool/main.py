@@ -23,6 +23,7 @@ import settings as Settings
 import definitions as Definitions
 import dispatcher as Dispatcher
 import visualization as Visualization
+import language as Lang
 
 class MainWindow(QMainWindow):
     dispatcher = 0
@@ -54,8 +55,8 @@ class MainWindow(QMainWindow):
 
         # add elements to boxes
         # bom button + label
-        self.button_bom = QPushButton("Stückliste", self)
-        self.button_bom.setToolTip("Stückliste wählen")
+        self.button_bom = QPushButton(Lang.get_string("button_bom"), self)
+        self.button_bom.setToolTip(Lang.get_string("button_bom_tooltip"))
         self.button_bom.setFixedSize(Definitions.GUI_WIDTH_BUTTON, Definitions.GUI_HEIGHT_BUTTON)
         self.button_bom.clicked.connect(self.select_file)
         self.label_bom = QLabel(self.file_name_bom, self)
@@ -63,8 +64,8 @@ class MainWindow(QMainWindow):
         self.box_header_bom.addWidget(self.label_bom)
         self.box_header_bom.addStretch()
         # database button + label
-        self.button_database = QPushButton("Bestelllisten",self)
-        self.button_database.setToolTip("Ordner mit den Bestelllisten wählen")
+        self.button_database = QPushButton(Lang.get_string("button_database"),self)
+        self.button_database.setToolTip(Lang.get_string("button_database_tooltip"))
         self.button_database.setFixedSize(Definitions.GUI_WIDTH_BUTTON, Definitions.GUI_HEIGHT_BUTTON)
         self.button_database.clicked.connect(self.select_database_folder)
         self.label_database = QLabel(self.path_database, self)
@@ -78,32 +79,32 @@ class MainWindow(QMainWindow):
         self.combobox_cad.setFixedWidth(Definitions.GUI_WIDTH_BUTTON)
         self.combobox_cad.activated[str].connect(self.select_cad_system)
         # button regroup
-        self.button_regroup = QPushButton("gleiche Zuordnungen\nzusammenfassen",self)
-        self.button_regroup.setToolTip("Zusammenfassen von identischen BOM-Bestellnummer-Zuordnungen")
+        self.button_regroup = QPushButton(Lang.get_string("button_regroup"),self)
+        self.button_regroup.setToolTip(Lang.get_string("button_regroup_tooltip"))
         self.button_regroup.setEnabled(self.window_settings["view_grouped"])
         self.button_regroup.setFixedSize(Definitions.GUI_WIDTH_BUTTON, Definitions.GUI_HEIGHT_BUTTON)
         self.button_regroup.clicked.connect(self.regroup)
         # checkbox for grouped/ungrouped view
-        self.checkbox_grouped = QCheckBox("Bauteile gruppieren")
+        self.checkbox_grouped = QCheckBox(Lang.get_string("checkbox_grouped"))
         self.checkbox_grouped.setChecked(self.window_settings["view_grouped"])
         self.checkbox_grouped.setEnabled(False)
         self.checkbox_grouped.stateChanged.connect(lambda: self.checkbox_changed(self.checkbox_grouped))
         # export ordering numbers
-        self.button_export = QPushButton("exp. Bestellliste",self)
-        self.button_export.setToolTip("Erstelle Bestlllisten anhand der gewählten Paare")
+        self.button_export = QPushButton(Lang.get_string("button_export"),self)
+        self.button_export.setToolTip(Lang.get_string("button_export_tooltip"))
         self.button_export.setEnabled(False)
         self.button_export.setFixedSize(Definitions.GUI_WIDTH_BUTTON, Definitions.GUI_HEIGHT_BUTTON)
         self.button_export.clicked.connect(self.export)
         # generate button
-        self.button_generate = QPushButton("Suche Paare",self)
-        self.button_generate.setToolTip("Suche nach bekannten Bestellnummern")
+        self.button_generate = QPushButton(Lang.get_string("button_generate"),self)
+        self.button_generate.setToolTip(Lang.get_string("button_generate_tooltip"))
         self.button_generate.setFixedSize(Definitions.GUI_WIDTH_BUTTON, Definitions.GUI_HEIGHT_BUTTON)
         self.button_generate.clicked.connect(self.generate_matches)
         # label requesting user to select files
-        self.label_hint = QLabel('Wähle eine Stückliste und den Pfad zu den Bestelllisten und drücke auf "Suche Paare"',self)
+        self.label_hint = QLabel(Lang.get_string("label_hint"),self)
         # close button
-        self.button_close = QPushButton("Schließen", self)
-        self.button_close.setToolTip("Anwendung schließen")
+        self.button_close = QPushButton(Lang.get_string("button_close"), self)
+        self.button_close.setToolTip(Lang.get_string("button_close_tooltip"))
         self.button_close.setFixedSize(Definitions.GUI_WIDTH_BUTTON, Definitions.GUI_HEIGHT_BUTTON)
         self.button_close.clicked.connect(QCoreApplication.quit)
         # pack header box
@@ -147,27 +148,27 @@ class MainWindow(QMainWindow):
 
         # show window
         self.setGeometry(50,50,1024,768)
-        self.setWindowTitle("Bestelllistengenerator")
+        self.setWindowTitle(Lang.get_string("window_title"))
         self.showMaximized()
         self.show()
 
     def select_file(self):
-        self.statusBar().showMessage('wähle Stückliste...')
-        file_name_bom, _ = QFileDialog.getOpenFileName(self,"Stückliste","","csv-Dateien (*.csv);;All Files (*)")
+        self.statusBar().showMessage(Lang.get_string("status_bar_msg_bom_file"))
+        file_name_bom, _ = QFileDialog.getOpenFileName(self,Lang.get_string("file_dialog_bom_name"),"",Lang.get_string("file_dialog_bom_type"))
         if file_name_bom:
             self.file_name_bom = file_name_bom
             self.label_bom.setText(file_name_bom)
-            self.statusBar().showMessage('gewählte Stückliste: ' + file_name_bom, 5000)
+            self.statusBar().showMessage(Lang.get_string("status_bar_msg_bom_sel_file") + file_name_bom, 5000)
         else:
             self.statusBar().clearMessage()
 
     def select_database_folder(self):
-        self.statusBar().showMessage('wähle Ordnerpfad...')
-        path_database = QFileDialog.getExistingDirectory(self,"Bestelllisten")
+        self.statusBar().showMessage(Lang.get_string("status_bar_msg_database_folder"))
+        path_database = QFileDialog.getExistingDirectory(self,Lang.get_string("file_dialog_database_name"))
         if path_database:
             self.path_database = path_database
             self.label_database.setText(path_database)
-            self.statusBar().showMessage('gewählter Ordner: ' + path_database, 5000)
+            self.statusBar().showMessage(Lang.get_string("status_bar_msg_database_sel_folder") + path_database, 5000)
         else:
             self.statusBar().clearMessage()
 
@@ -176,30 +177,30 @@ class MainWindow(QMainWindow):
 
     def generate_matches(self):
         if self.path_database and self.file_name_bom:
-            self.statusBar().showMessage("Suche läuft...")
+            self.statusBar().showMessage(Lang.get_string("status_bar_msg_search_running"))
             self.checkbox_grouped.setEnabled(True)
             self.button_export.setEnabled(True)
             try:
                 self.dispatcher.set_bom_file_path(self.file_name_bom)
                 self.dispatcher.set_database_path(self.path_database)
                 self.dispatcher.find_matches()
-                self.statusBar().showMessage("Suche beendet...", 5000)
+                self.statusBar().showMessage(Lang.get_string("status_bar_msg_search_finished"), 5000)
                 self.show_matches()
             except Exception as e:
-                self.statusBar().showMessage("Fehler!")
+                self.statusBar().showMessage(Lang.get_string("status_bar_msg_error"))
                 error_msg = QMessageBox()
                 error_msg.setIcon(QMessageBox.Critical)
-                error_msg.setText("Fehler")
+                error_msg.setText(Lang.get_string("error"))
                 error_msg.setInformativeText(e.args[0])
-                error_msg.setWindowTitle("Fehler")
+                error_msg.setWindowTitle(Lang.get_string("error"))
                 error_msg.exec_()
                 raise Exception from e
         else:
             error_msg = QMessageBox()
             error_msg.setIcon(QMessageBox.Critical)
-            error_msg.setText("Fehler")
-            error_msg.setInformativeText("Bitte Stückliste und Bestelllistenordner wählen!")
-            error_msg.setWindowTitle("Fehler")
+            error_msg.setText(Lang.get_string("error"))
+            error_msg.setInformativeText(Lang.get_string("error_msg_file_and_folder"))
+            error_msg.setWindowTitle(Lang.get_string("error"))
             error_msg.exec_()
             self.statusBar().clearMessage()
 
@@ -233,14 +234,14 @@ class MainWindow(QMainWindow):
             # remove file ending
             filename,_ = os.path.splitext(filename)
             self.dispatcher.export(path,filename)
-            self.statusBar().showMessage("Erledigt...", 2000)
+            self.statusBar().showMessage(Lang.get_string("status_bar_msg_done"), 2000)
         except Exception as e:
-            self.statusBar().showMessage("Fehler!")
+            self.statusBar().showMessage(Lang.get_string("status_bar_msg_error"))
             error_msg = QMessageBox()
             error_msg.setIcon(QMessageBox.Critical)
-            error_msg.setText("Fehler")
+            error_msg.setText(Lang.get_string("error"))
             error_msg.setInformativeText(e.args[0])
-            error_msg.setWindowTitle("Fehler")
+            error_msg.setWindowTitle(Lang.get_string("error"))
             error_msg.exec_()
             raise Exception from e
 
