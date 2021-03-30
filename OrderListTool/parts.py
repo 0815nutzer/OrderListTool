@@ -439,12 +439,18 @@ class PartGroup():
                 self.group_attributes[attribute] = not Setup.GUI_ITEM_ATTRIBUTES[attribute]
 
 class OrderListItem():
-    def __init__(self,match):
+    def __init__(self,match,ignore=False):
         if not isinstance(match,Match):
             raise Exception("match is not an instance of class Match")
+        if not isinstance(ignore,bool):
+            raise Exception("ignore is not a boolean")
         self.properties = copy.deepcopy(match.get_bom_part().get_all_properties())
         # doing this, will override properties always got from BOM part (i.e. value)
         self.properties.update(copy.deepcopy(match.get_matching_part().get_all_properties()))
+        self.ignore = ignore
+
+    def is_ignored(self):
+        return self.ignore
 
     def get_properties(self):
         return self.properties

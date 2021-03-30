@@ -64,7 +64,7 @@ def parse_file_for_part_template_properties(file,template):
                     raise Exception("wrong property definition: " + prop + " in file: " + file)
                 symbol = split[2]
                 # default value as number or String
-                if split[1].lower() == Parts.PartPropertyType.STRING.value or split[1].lower() == Parts.PartPropertyType.SUBSTRING.value:
+                if split[1].lower() == Parts.PartPropertyType.STRING.value.lower() or split[1].lower() == Parts.PartPropertyType.SUBSTRING.value.lower():
                     default_value = split[3]
                 else:
                     default_value = float(split[3])

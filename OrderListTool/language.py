@@ -32,7 +32,8 @@ languages.update({"en":{
     "file_dialog_bom_type":"csv-files (*.csv);;All Files (*)",
     "file_dialog_database_name":"Ordering numbers",
     "error":"Error!",
-    "error_msg_file_and_folder":"Please choose a BOM-file and the folder containing the lists with the ordering numbers!"
+    "error_msg_file_and_folder":"Please choose a BOM-file and the folder containing the lists with the ordering numbers!",
+    "PTI_category_others_description":"others"
 }})
 
 # german
@@ -64,7 +65,8 @@ languages.update({"de":{
     "file_dialog_bom_type":"csv-Dateien (*.csv);;All Files (*)",
     "file_dialog_database_name":"Bestellnummern",
     "error":"Fehler!",
-    "error_msg_file_and_folder":"Bitte Stückliste und Ordner mit den Bestellnummern wählen!"
+    "error_msg_file_and_folder":"Bitte Stückliste und Ordner mit den Bestellnummern wählen!",
+    "PTI_category_others_description":"weitere Bauteile"
 }})
 
 # return requested string

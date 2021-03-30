@@ -5,6 +5,7 @@ import definitions as Definitions
 import settings as Settings
 import setup as Setup
 import parts as Parts
+import language as Lang
 import visualization as Visualization
 import parseFunctions as pF
 
@@ -66,7 +67,7 @@ class Dispatcher():
             "requested_properties":copy.deepcopy(Setup.PTI_REQ_PROPERTIES),
             "reference_symbols":None,
             "keyword_database_file":None,
-            "description":"weitere Bauteile"
+            "description":Lang.get_string("PTI_category_others_description")
         }
         self.part_templates.append(Parts.PartTemplate(args))
 
@@ -327,11 +328,9 @@ class Dispatcher():
                 group_attributes = copy.deepcopy(group.get_attributes())
                 for match in group.get_matches():
                     attributes = group_attributes.pop(0)
+                    ignore = False
                     # no matching part -> skip
                     if match.get_matching_part() is None:
-                        continue
-                    # user changed any atrribute checkbox -> skip
-                    if any(attributes[attribute] != Setup.GUI_ITEM_ATTRIBUTES[attribute] for attribute in attributes):
                         continue
                     # ordering number not defined or empty
                     ord_number = match.get_matching_part().get_property_value("ordnum")
@@ -339,10 +338,16 @@ class Dispatcher():
                         continue
                     if not ord_number:
                         continue
-                    self.order_list_items.append(Parts.OrderListItem(match))
+                    # user changed any atrribute checkbox -> skip
+                    if any(attributes[attribute] != Setup.GUI_ITEM_ATTRIBUTES[attribute] for attribute in attributes):
+                        ignore = True
+                    self.order_list_items.append(Parts.OrderListItem(match,ignore))
 
         # group order list items
         for item in self.order_list_items:
+            # do not add item to group if ignored
+            if item.is_ignored():
+                continue
             for group in self.order_list_groups:
                 # if item fits to any group, then add
                 if group.get_reference_item().is_equal(item):

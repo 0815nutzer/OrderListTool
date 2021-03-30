@@ -6,12 +6,15 @@
 # PROPERTIES are used to set properties for all the following parts listed below
 # PROPERTIES consist of two elements: a keyword and a value, separated by :
 # ENTRIES are used to define a part with the properties set by the previous PROPERTIES
-# ENTRIES consists of three elements: the part value, the ordering number and an optional comment, separated by ;
+# ENTRIES consists of these properties, defined in the last row inside the PROPERTY definition section, separated by ;
 #
 # value-syntax: the value can be written in two ways
-#	suffix as delimiter:	3.3uF -> 3u3
-#	suffix at the end:		3.3uF -> 3.3u
-# Attension: µ or u are used similar
+#	unit prefix as delimiter:	3.3uF -> 3u3
+#	unit prefix at the end:		3.3uF -> 3.3u
+# ATTENTION:
+#   - prefix symbols are case sensitiv!
+#   - see documentation for all valid unit prefixes
+#   - value must not contain the unit symbol itself!
 #
 # defined PROPERTY keywords
 #   VALUE           defines the value of the part
