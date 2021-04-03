@@ -1,11 +1,15 @@
 # OrderListTool
 Create an order list from a BOM
 
+Documentation: https://github.com/0815nutzer/OrderListTool/wiki
+
 English description see below.
 
 ## German description
 Mit Hilfe dieses kleinen Werkzeugs soll eine automatisierte Zuordnung von Bestellnummern zu Bauteilen in einem Schaltplan erfolgen.
 Die Bauteile des Schaltplan müssen hierfür in einer entsprechend formatierten csv-Datei zur Verfügung stehen, während die "Bauteildatenbank", welche die zuzuordnenden Bestellnummern enthält, aus entsprechend formatierten Textdateien besteht.
+
+Eine ausführlichere Dokumentation befindet sich im Wiki dieses Projekts: https://github.com/0815nutzer/OrderListTool/wiki
 
 ### Anwendung
 1. Erzeugen einer Stückliste im csv-Format unter Verwendung des dem CAD-System entsprechenden Skripts im Ordner "BOM-Scripts"
