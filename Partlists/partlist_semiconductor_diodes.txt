@@ -14,6 +14,7 @@
 # defined PROPERTY keywords
 #   VALUE           defines the value of the part
 #   ORDNUM          defines the part ordering number
+#   MANNUM          defines the manufacture number
 #   COMMENT         defines a part comment
 #	PACKAGE			defines the package property of the following parts
 #	DISTRIBUTOR		defines the distributor, to who the ordering number belongs
@@ -39,9 +40,10 @@ VALUE:STRING
 PACKAGE:SUBSTRING
 ORDNUM:STRING
 DISTRIBUTOR:STRING
+MANNUM:STRING
 COMMENT:STRING
 # entry properties
-VALUE;ORDNUM;COMMENT
+VALUE;ORDNUM;MANNUM;COMMENT
 ENDDEFINE
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -49,22 +51,22 @@ ENDDEFINE
 # Farnell
 DISTRIBUTOR:Farnell
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Shottky
+# Schottky
 
 # SOD-323F
 PACKAGE:D_SOD-323F
-PMEG4005AEA;8738025;NEXPERIA 5+
+PMEG4005AEA;8738025;PMEG4005AEA, 115;NEXPERIA 5+
 
 # SMA
 PACKAGE:D_SMA
-B340AE;3127195;DIODES INC. 5+
+B340AE;3127195;B340AE-13;DIODES INC. 5+
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Zener
 
 # SOD-123
 PACKAGE:D_SOD-123
-MMSZ5242B;2748170;MULTICOMP PRO 5+
+MMSZ5242B;2748170;MMSZ5242B+;MULTICOMP PRO 5+
 
 
 

@@ -14,6 +14,7 @@
 # defined PROPERTY keywords
 #   VALUE           defines the value of the part
 #   ORDNUM          defines the part ordering number
+#   MANNUM          defines the manufacture number
 #   COMMENT         defines a part comment
 #	PACKAGE			defines the package property of the following parts
 #	DISTRIBUTOR		defines the distributor, to who the ordering number belongs
@@ -39,9 +40,10 @@ VALUE:STRING
 PACKAGE:SUBSTRING
 ORDNUM:STRING
 DISTRIBUTOR:STRING
+MANNUM:STRING
 COMMENT:STRING
 # entry properties
-VALUE;ORDNUM;COMMENT
+VALUE;ORDNUM;MANNUM;COMMENT
 ENDDEFINE
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -51,7 +53,7 @@ DISTRIBUTOR:Farnell
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # button switch
 PACKAGE:B3FS
-B3FS-1000P;1960992;OMRON
+B3FS-1000P;1960992;B3FS1000P;OMRON
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Digikey
@@ -59,15 +61,13 @@ DISTRIBUTOR:Digikey
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # RJ45 connector with LED
 PACKAGE:RJ45
-J1B1211CCD;1278-1052-ND;WIZnet
+J1B1211CCD;1278-1052-ND;J1B1211CCD;WIZnet
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Phoenix connectors
 # MKDS 5mm
 PACKAGE:Phoenix_MKDS-1,5-2_1x02_P5.00mm_Horizontal
-MKDS-1,5-2;277-1258-ND; Phoenix Contact
-#PACKAGE:Phoenix_MKDS-1,5-3_1x03_P5.00mm_Horizontal
-#MKDS-1,5-3;277-1258-ND; Phoenix Contact
+MKDS-1,5-2;277-1258-ND;1715022;Phoenix Contact
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Reichelt
@@ -75,89 +75,89 @@ DISTRIBUTOR:Reichelt
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Pin Header
 PACKAGE:PinHeader_1x02_P2.54mm
-PinHeader_01x02;MPE 087-1-002;Stiftleiste 1x02
+PinHeader_01x02;MPE 087-1-002;087-1-002-0-S-XS0-1260;Stiftleiste 1x02
 PACKAGE:PinHeader_1x03_P2.54mm
-PinHeader_01x03;MPE 087-1-003;Stiftleiste 1x03
+PinHeader_01x03;MPE 087-1-003;087-1-003-0-S-XS0-1260;Stiftleiste 1x03
 PACKAGE:PinHeader_1x04_P2.54mm
-PinHeader_01x04;MPE 087-1-004;Stiftleiste 1x04
+PinHeader_01x04;MPE 087-1-004;087-1-004-0-S-XS0-1260;Stiftleiste 1x04
 PACKAGE:PinHeader_1x05_P2.54mm
-PinHeader_01x05;MPE 087-1-005;Stiftleiste 1x05
+PinHeader_01x05;MPE 087-1-005;087-1-005-0-S-XS0-1260;Stiftleiste 1x05
 PACKAGE:PinHeader_1x06_P2.54mm
-PinHeader_01x06;MPE 087-1-006;Stiftleiste 1x06
+PinHeader_01x06;MPE 087-1-006;087-1-006-0-S-XS0-1260;Stiftleiste 1x06
 PACKAGE:PinHeader_1x07_P2.54mm
-PinHeader_01x07;MPE 087-1-007;Stiftleiste 1x07
+PinHeader_01x07;MPE 087-1-007;087-1-007-0-S-XS0-1260;Stiftleiste 1x07
 PACKAGE:PinHeader_1x08_P2.54mm
-PinHeader_01x08;MPE 087-1-008;Stiftleiste 1x08
+PinHeader_01x08;MPE 087-1-008;087-1-008-0-S-XS0-1260;Stiftleiste 1x08
 PACKAGE:PinHeader_1x10_P2.54mm
-PinHeader_01x10;MPE 087-1-010;Stiftleiste 1x10
+PinHeader_01x10;MPE 087-1-010;087-1-010-0-S-XS0-1260;Stiftleiste 1x10
 PACKAGE:PinHeader_1x20_P2.54mm
-PinHeader_01x20;MPE 087-1-020;Stiftleiste 1x20
+PinHeader_01x20;MPE 087-1-020;087-1-020-0-S-XS0-1260;Stiftleiste 1x20
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Jumper
 PACKAGE:PinHeader_1x02_P2.54mm
-Jumper_2_Open;MPE 087-1-002;nur Stiftleiste ohne Jumper
-Jumper_2_Open;MPE 087-1-002 & JUMPER 2,54 SW;Stiftleiste + Jumper
-Jumper_2_Open;MPE 087-1-002 & JUMPER 2,54GL SW;Stiftleiste + Jumper mit Lasche
-Jumper_3_Open;MPE 087-1-003;nur Stiftleiste ohne Jumper
-Jumper_3_Open;MPE 087-1-003 & JUMPER 2,54 SW;Stiftleiste + Jumper
-Jumper_3_Open;MPE 087-1-003 & JUMPER 2,54GL SW;Stiftleiste + Jumper mit Lasche
+Jumper_2_Open;MPE 087-1-002;087-1-002-0-S-XS0-1260;nur Stiftleiste ohne Jumper
+Jumper_2_Open;MPE 087-1-002 & JUMPER 2,54 SW;087-1-002-0-S-XS0-1260;Stiftleiste + Jumper
+Jumper_2_Open;MPE 087-1-002 & JUMPER 2,54GL SW;087-1-002-0-S-XS0-1260;Stiftleiste + Jumper mit Lasche
+Jumper_3_Open;MPE 087-1-003;087-1-003-0-S-XS0-1260;nur Stiftleiste ohne Jumper
+Jumper_3_Open;MPE 087-1-003 & JUMPER 2,54 SW;087-1-003-0-S-XS0-1260;Stiftleiste + Jumper
+Jumper_3_Open;MPE 087-1-003 & JUMPER 2,54GL SW;087-1-003-0-S-XS0-1260;Stiftleiste + Jumper mit Lasche
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # PSK-connector
 PACKAGE:Molex_KK-254
 # gerader PCB-Stecker
-PSS_254_2G;PSS 254/2G;PSK Stecker gerade
-PSS_254_2G;PSS 254/2G & PSK 254/2W;PSK Stecker gerade + Buchse
-PSS_254_2G;PSS 254/2G & PSK 254/2W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
-PSS_254_3G;PSS 254/3G;PSK Stecker gerade
-PSS_254_3G;PSS 254/3G & PSK 254/3W;PSK Stecker gerade + Buchse
-PSS_254_3G;PSS 254/3G & PSK 254/3W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
-PSS_254_4G;PSS 254/4G;PSK Stecker gerade
-PSS_254_4G;PSS 254/4G & PSK 254/4W;PSK Stecker gerade + Buchse
-PSS_254_4G;PSS 254/4G & PSK 254/4W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
-PSS_254_5G;PSS 254/5G;PSK Stecker gerade
-PSS_254_5G;PSS 254/5G & PSK 254/5W;PSK Stecker gerade + Buchse
-PSS_254_5G;PSS 254/5G & PSK 254/5W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
-PSS_254_6G;PSS 254/6G;PSK Stecker gerade
-PSS_254_6G;PSS 254/6G & PSK 254/6W;PSK Stecker gerade + Buchse
-PSS_254_6G;PSS 254/6G & PSK 254/6W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
-PSS_254_8G;PSS 254/8G;PSK Stecker gerade
-PSS_254_8G;PSS 254/8G & PSK 254/8W;PSK Stecker gerade + Buchse
-PSS_254_8G;PSS 254/8G & PSK 254/8W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
-PSS_254_10G;PSS 254/10G;PSK Stecker gerade
-PSS_254_10G;PSS 254/10G & PSK 254/10W;PSK Stecker gerade + Buchse
-PSS_254_10G;PSS 254/10G & PSK 254/10W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_2G;PSS 254/2G;22272021;PSK Stecker gerade
+PSS_254_2G;PSS 254/2G & PSK 254/2W;22272021;PSK Stecker gerade + Buchse
+PSS_254_2G;PSS 254/2G & PSK 254/2W & PSK-KONTAKTE;22272021;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_3G;PSS 254/3G;22272031;PSK Stecker gerade
+PSS_254_3G;PSS 254/3G & PSK 254/3W;22272031;PSK Stecker gerade + Buchse
+PSS_254_3G;PSS 254/3G & PSK 254/3W & PSK-KONTAKTE;22272031;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_4G;PSS 254/4G;22272041;PSK Stecker gerade
+PSS_254_4G;PSS 254/4G & PSK 254/4W;22272041;PSK Stecker gerade + Buchse
+PSS_254_4G;PSS 254/4G & PSK 254/4W & PSK-KONTAKTE;22272041;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_5G;PSS 254/5G;22272051;PSK Stecker gerade
+PSS_254_5G;PSS 254/5G & PSK 254/5W;22272051;PSK Stecker gerade + Buchse
+PSS_254_5G;PSS 254/5G & PSK 254/5W & PSK-KONTAKTE;22272051;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_6G;PSS 254/6G;22272061;PSK Stecker gerade
+PSS_254_6G;PSS 254/6G & PSK 254/6W;22272061;PSK Stecker gerade + Buchse
+PSS_254_6G;PSS 254/6G & PSK 254/6W & PSK-KONTAKTE;22272061;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_8G;PSS 254/8G;22272081;PSK Stecker gerade
+PSS_254_8G;PSS 254/8G & PSK 254/8W;22272081;PSK Stecker gerade + Buchse
+PSS_254_8G;PSS 254/8G & PSK 254/8W & PSK-KONTAKTE;22272081;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_10G;PSS 254/10G;22272101;PSK Stecker gerade
+PSS_254_10G;PSS 254/10G & PSK 254/10W;22272101;PSK Stecker gerade + Buchse
+PSS_254_10G;PSS 254/10G & PSK 254/10W & PSK-KONTAKTE;22272101;PSK Stecker gerade + Buchse + Kontakte
 # gewinkelter PCB-Stecker
-PSS_254_2W;PSS 254/2W;PSK Stecker gerade
-PSS_254_2W;PSS 254/2W & PSK 254/2W;PSK Stecker gerade + Buchse
-PSS_254_2W;PSS 254/2W & PSK 254/2W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
-PSS_254_3W;PSS 254/3W;PSK Stecker gerade
-PSS_254_3W;PSS 254/3W & PSK 254/3W;PSK Stecker gerade + Buchse
-PSS_254_3W;PSS 254/3W & PSK 254/3W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
-PSS_254_4W;PSS 254/4W;PSK Stecker gerade
-PSS_254_4W;PSS 254/4W & PSK 254/4W;PSK Stecker gerade + Buchse
-PSS_254_4W;PSS 254/4W & PSK 254/4W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
-PSS_254_5W;PSS 254/5W;PSK Stecker gerade
-PSS_254_5W;PSS 254/5W & PSK 254/5W;PSK Stecker gerade + Buchse
-PSS_254_5W;PSS 254/5W & PSK 254/5W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
-PSS_254_6W;PSS 254/6W;PSK Stecker gerade
-PSS_254_6W;PSS 254/6W & PSK 254/6W;PSK Stecker gerade + Buchse
-PSS_254_6W;PSS 254/6W & PSK 254/6W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
-PSS_254_8W;PSS 254/8W;PSK Stecker gerade
-PSS_254_8W;PSS 254/8W & PSK 254/8W;PSK Stecker gerade + Buchse
-PSS_254_8W;PSS 254/8W & PSK 254/8W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
-PSS_254_10W;PSS 254/10W;PSK Stecker gerade
-PSS_254_10W;PSS 254/10W & PSK 254/10W;PSK Stecker gerade + Buchse
-PSS_254_10W;PSS 254/10W & PSK 254/10W & PSK-KONTAKTE;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_2W;PSS 254/2W;-;PSK Stecker gerade
+PSS_254_2W;PSS 254/2W & PSK 254/2W;-;PSK Stecker gerade + Buchse
+PSS_254_2W;PSS 254/2W & PSK 254/2W & PSK-KONTAKTE;-;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_3W;PSS 254/3W;-;PSK Stecker gerade
+PSS_254_3W;PSS 254/3W & PSK 254/3W;-;PSK Stecker gerade + Buchse
+PSS_254_3W;PSS 254/3W & PSK 254/3W & PSK-KONTAKTE;-;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_4W;PSS 254/4W;-;PSK Stecker gerade
+PSS_254_4W;PSS 254/4W & PSK 254/4W;-;PSK Stecker gerade + Buchse
+PSS_254_4W;PSS 254/4W & PSK 254/4W & PSK-KONTAKTE;-;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_5W;PSS 254/5W;-;PSK Stecker gerade
+PSS_254_5W;PSS 254/5W & PSK 254/5W;-;PSK Stecker gerade + Buchse
+PSS_254_5W;PSS 254/5W & PSK 254/5W & PSK-KONTAKTE;-;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_6W;PSS 254/6W;-;PSK Stecker gerade
+PSS_254_6W;PSS 254/6W & PSK 254/6W;-;PSK Stecker gerade + Buchse
+PSS_254_6W;PSS 254/6W & PSK 254/6W & PSK-KONTAKTE;-;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_8W;PSS 254/8W;-;PSK Stecker gerade
+PSS_254_8W;PSS 254/8W & PSK 254/8W;-;PSK Stecker gerade + Buchse
+PSS_254_8W;PSS 254/8W & PSK 254/8W & PSK-KONTAKTE;-;PSK Stecker gerade + Buchse + Kontakte
+PSS_254_10W;PSS 254/10W;-;PSK Stecker gerade
+PSS_254_10W;PSS 254/10W & PSK 254/10W;-;PSK Stecker gerade + Buchse
+PSS_254_10W;PSS 254/10W & PSK 254/10W & PSK-KONTAKTE;-;PSK Stecker gerade + Buchse + Kontakte
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Fuse Holder
 PACKAGE:Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open
-0.25A;PL OGN-22,5;Sicherungshalter
-0.25A;PL OGN-22,5 & FLINK 0,25A;Sicherungshalter + Sicherung flink
-0.25A;PL OGN-22,5 & MTR. 0,25A;Sicherungshalter + Sicherung mittelträge
-0.25A;PL OGN-22,5 & TR 0,25A;Sicherungshalter + Sicherung träge
+0.25A;PL OGN-22,5;0031.8201;Sicherungshalter
+0.25A;PL OGN-22,5 & FLINK 0,25A;PL OGN-22,5;Sicherungshalter + Sicherung flink
+0.25A;PL OGN-22,5 & MTR. 0,25A;PL OGN-22,5;Sicherungshalter + Sicherung mittelträge
+0.25A;PL OGN-22,5 & TR 0,25A;PL OGN-22,5;Sicherungshalter + Sicherung träge
 
 
 

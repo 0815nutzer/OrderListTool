@@ -19,6 +19,7 @@
 # defined PROPERTY keywords
 #   VALUE           defines the value of the part
 #   ORDNUM          defines the part ordering number
+#   MANNUM          defines the manufacture number
 #   COMMENT         defines a part comment
 #	PACKAGE			defines the package attribute of the following parts
 #	CURRENT			defines the current rating of the following parts [in A]
@@ -54,9 +55,10 @@ ORDNUM:STRING
 DISTRIBUTOR:STRING
 CURRENT:NUMBER_MIN:A:0
 TOLERANCE:NUMBER_MAX:%:20
+MANNUM:STRING
 COMMENT:STRING
 # entry properties
-VALUE;ORDNUM;COMMENT
+VALUE;ORDNUM;MANNUM;COMMENT
 ENDDEFINE
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -67,7 +69,7 @@ DISTRIBUTOR:Farnell
 TOLERANCE:20
 PACKAGE:L_10.4x10.4_H4.8
 CURRENT:3.35
-18u;2288208;Coilcraft
+18u;2288208;MSS1038-183MLC;Coilcraft
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Digikey
@@ -76,12 +78,12 @@ DISTRIBUTOR:Digikey
 TOLERANCE:20
 PACKAGE:IHLP-2525
 CURRENT:5.5
-4u7;541-1010-1-ND;VISHAY
+4u7;541-1010-1-ND;IHLP2525CZER4R7M01;VISHAY
 
 PACKAGE:WE-TPC-3816
 CURRENT:0.72
-15u;732-2618-1-ND;Würth
+15u;732-2618-1-ND;744025150;Würth
 
 PACKAGE:WE-DD-Typ-L
 CURRENT:1
-10u;732-2317-1-ND;Würth
+10u;732-2317-1-ND;744871100;Würth

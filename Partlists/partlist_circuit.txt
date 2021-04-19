@@ -14,6 +14,7 @@
 # defined PROPERTY keywords
 #   VALUE           defines the value of the part
 #   ORDNUM          defines the part ordering number
+#   MANNUM          defines the manufacture number
 #   COMMENT         defines a part comment
 #	PACKAGE			defines the package property of the following parts
 #	DISTRIBUTOR		defines the distributor, to who the ordering number belongs
@@ -39,9 +40,10 @@ VALUE:STRING
 PACKAGE:SUBSTRING
 ORDNUM:STRING
 DISTRIBUTOR:STRING
+MANNUM:STRING
 COMMENT:STRING
 # entry properties
-VALUE;ORDNUM;COMMENT
+VALUE;ORDNUM;MANNUM;COMMENT
 ENDDEFINE
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -51,9 +53,9 @@ DISTRIBUTOR:Farnell
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Linear voltage regulators
 PACKAGE:SOT-89
-L79L12;1564315;STMICROELECTRONICS
-L79L12ACUTR;1564315;STMICROELECTRONICS
-L79L12ABUTR;2463948;STMICROELECTRONICS
+L79L12;1564315;L78L12ACUTR;STMICROELECTRONICS
+L79L12ACUTR;1564315;L78L12ACUTR;STMICROELECTRONICS
+L79L12ABUTR;2463948;L78L12ABUTR;STMICROELECTRONICS
 
 
 

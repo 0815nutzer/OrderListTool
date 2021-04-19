@@ -14,6 +14,7 @@
 # defined PROPERTY keywords
 #   VALUE           defines the value of the part
 #   ORDNUM          defines the part ordering number
+#   MANNUM          defines the manufacture number
 #   COMMENT         defines a part comment
 #	PACKAGE			defines the package property of the following parts
 #	DISTRIBUTOR		defines the distributor, to who the ordering number belongs
@@ -39,9 +40,10 @@ VALUE:STRING
 PACKAGE:SUBSTRING
 ORDNUM:STRING
 DISTRIBUTOR:STRING
+MANNUM:STRING
 COMMENT:STRING
 # entry properties
-VALUE;ORDNUM;COMMENT
+VALUE;ORDNUM;MANNUM;COMMENT
 ENDDEFINE
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -51,16 +53,16 @@ DISTRIBUTOR:Reichelt
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 0603 LEDs
 PACKAGE:LED_0603
-GREEN;LG L29K;Osram
-YELLOW;OSO LYL29K-H1K2;Osram
-RED;OSO LSL29K-G1J2;Osram
+GREEN;LG L29K;LG L29K-F2J1-24-Z;Osram
+YELLOW;OSO LYL29K-H1K2;LYL29K-H1K2-26;Osram
+RED;OSO LSL29K-G1J2;LSL29K-G1J2-1;Osram
 
 # 0805 LEDs
 PACKAGE:LED_0805
-GREEN;OSO LGR971;Osram
-YELLOW;OSO LYR976;Osram
-ORANGE;OSO LOR976;Osram
-RED;OSO LHR974;Osram
+GREEN;OSO LGR971;LGR971;Osram
+YELLOW;OSO LYR976;LYR976;Osram
+ORANGE;OSO LOR976;LOR976;Osram
+RED;OSO LHR974;LHR974;Osram
 
 
 
