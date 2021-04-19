@@ -391,7 +391,10 @@ class Dispatcher():
             file_name = os.path.join(folder,filename + "_summarized.txt")
             fobj = open(file_name,"w")
             # write header if requested
-            fobj.write(Setup.SEO_DELIMITER.join(Setup.SEO))
+            if Setup.SEO_HEADER is None:
+                fobj.write(Setup.SEO_DELIMITER.join(Setup.SEO))
+            else:
+                fobj.write(Setup.SEO_DELIMITER.join(Setup.SEO_HEADER))
             fobj.write("\n")
             # write each order list item into one line
             for item in self.order_list_items:

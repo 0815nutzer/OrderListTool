@@ -24,10 +24,9 @@ LANGUAGE = "de"         # GUI language (en, de)
 # define part template instances (PTI)
 ###################################################################################################
 # list all properties, that each instance must have
-# for proper function of this tool, this list must contain as a minimum: ["value", "ordNum", "package", "distributor"]
-PTI_REQ_PROPERTIES = ["value", "ordNum", "package", "distributor"]
+# for proper function of this tool, this list must contain as a minimum: ["value", "ordNum", "package", "distributor", "manNum"]
+PTI_REQ_PROPERTIES = ["value", "ordNum", "package", "distributor", "manNum"]
 
-# order of definitions determines the order later in GUI
 # parts found in the bom file, which will not match to one of the listed instances below,
 # will be collected in an instance called "others"
 # database files, containing keywords not assigned to any of the instances below,
@@ -36,7 +35,7 @@ PTI = []
 # capacitor
 PTI.append({
     "part_type":"capacitor",
-    "requested_properties":["value", "ordNum", "distributor", "package", "voltage", "dielectric", "tolerance"],
+    "requested_properties":["value", "ordNum", "distributor", "package", "voltage", "dielectric", "tolerance", "manNum"],
     "reference_symbols":["C"],
     "keyword_database_file":"capacitor",
     "description":"Kapazitäten"
@@ -44,7 +43,7 @@ PTI.append({
 # inductor
 PTI.append({
     "part_type":"inductor",
-    "requested_properties":["value", "ordNum", "distributor", "package", "current", "tolerance"],
+    "requested_properties":["value", "ordNum", "distributor", "package", "current", "tolerance", "manNum"],
     "reference_symbols":["L"],
     "keyword_database_file":"inductor",
     "description":"Induktivitäten"
@@ -52,7 +51,7 @@ PTI.append({
 # resistor
 PTI.append({
     "part_type":"resistor",
-    "requested_properties":["value", "ordNum", "distributor", "package", "power", "tolerance"],
+    "requested_properties":["value", "ordNum", "distributor", "package", "power", "tolerance", "manNum"],
     "reference_symbols":["R","RV"],
     "keyword_database_file":"resistor",
     "description":"Widerstände"
@@ -60,7 +59,7 @@ PTI.append({
 # semiconductor
 PTI.append({
     "part_type":"semiconductor",
-    "requested_properties":["value", "ordNum", "distributor", "package"],
+    "requested_properties":["value", "ordNum", "distributor", "package", "manNum"],
     "reference_symbols":["D","Q"],
     "keyword_database_file":"semiconductor",
     "description":"Halbleiter"
@@ -68,7 +67,7 @@ PTI.append({
 # mechanics
 PTI.append({
     "part_type":"mechanics",
-    "requested_properties":["value", "ordNum", "distributor", "package"],
+    "requested_properties":["value", "ordNum", "distributor", "package", "manNum"],
     "reference_symbols":["J","JP", "F"],
     "keyword_database_file":"mechanics",
     "description":"mechanische Bauteile"
@@ -76,7 +75,7 @@ PTI.append({
 # ICs
 PTI.append({
     "part_type":"ic",
-    "requested_properties":["value", "ordNum", "distributor", "package"],
+    "requested_properties":["value", "ordNum", "distributor", "package", "manNum"],
     "reference_symbols":["U"],
     "keyword_database_file":"circuit",
     "description":"IC's"
@@ -135,7 +134,8 @@ DOC.append({
 # summarized elementwise orderlist (SEO)
 ###################################################################################################
 # list all properties, that each entry should contain (all properties except of "ref" used here has to be defined in PTI_REQ_PROPERTIES (see above))
-SEO = ["Ref","Distributor","ordNum","Package"]
+SEO = ["Ref","manNum","distributor","ordNum","Package"]
+SEO_HEADER = ["Reference","Manufacturer part name","Distributor","Order number","Package"]
 SEO_DELIMITER = "\t"
 
 # additional attributes, user needs to organize his data
