@@ -68,7 +68,7 @@ PTI.append({
 PTI.append({
     "part_type":"mechanics",
     "requested_properties":["value", "ordNum", "distributor", "package", "manNum"],
-    "reference_symbols":["J","JP", "F"],
+    "reference_symbols":["J","JP","F","K"],
     "keyword_database_file":"mechanics",
     "description":"mechanische Bauteile"
 })
