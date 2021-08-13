@@ -3,6 +3,9 @@ Create an order list from a BOM
 
 Documentation: https://github.com/0815nutzer/OrderListTool/wiki
 
+Dependencies: python3-pyqt5
+
+
 English description see below.
 
 ## German description
