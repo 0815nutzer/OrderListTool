@@ -134,8 +134,8 @@ DOC.append({
 # summarized elementwise orderlist (SEO)
 ###################################################################################################
 # list all properties, that each entry should contain (all properties except of "ref" used here has to be defined in PTI_REQ_PROPERTIES (see above))
-SEO = ["Ref","manNum","distributor","ordNum","Package"]
-SEO_HEADER = ["Reference","Manufacturer part name","Distributor","Order number","Package"]
+SEO = ["Ref","manNum","distributor","ordNum","Package","value"]
+SEO_HEADER = ["Reference","Manufacturer part name","Distributor","Order number","Package","Value"]
 SEO_DELIMITER = "\t"
 
 # additional attributes, user needs to organize his data
